@@ -1,8 +1,27 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueRouter from "vue-router";
+
+import AboutVue from "./components/About.vue";
+import DashboardVue from "./components/Dashboard.vue";
 
 Vue.config.productionTip = false
 
+const routes = [{
+    path: "/dashboard",
+    component: DashboardVue
+  },
+  {
+    path: "/about",
+    component: AboutVue
+  }
+];
+const router = new VueRouter({
+  routes: routes
+});
+Vue.use(VueRouter);
+
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

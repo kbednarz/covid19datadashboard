@@ -3,17 +3,16 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">
+          <router-link to="/dashboard" class="nav-link" active-class="active">
             <span data-feather="home"></span>
             Dashboard
-            <span class="sr-only">(current)</span>
-          </a>
+          </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <router-link to="/about" class="nav-link" active-class="active">
             <span data-feather="file"></span>
-            Orders
-          </a>
+            About
+          </router-link>
         </li>
       </ul>
     </div>

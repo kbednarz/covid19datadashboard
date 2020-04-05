@@ -19,6 +19,7 @@
               </button>
             </div>
           </div>
+          <router-view></router-view>
         </main>
       </div>
     </div>
