@@ -20,6 +20,9 @@ export default {
   },
   mounted() {
     this.fillData();
+    this.axios
+      .get("https://api.covid19api.com/")
+      .then(response => (console.log(response)));
   },
   methods: {
     fillData() {
