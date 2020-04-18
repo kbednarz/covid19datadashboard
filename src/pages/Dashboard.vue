@@ -1,28 +1,31 @@
 <template>
   <div>
+    <infobox title="Ilość przypadków" text="2323232"/>
     Dashboard
     <line-chart :chart-data="datacollection"></line-chart>
     <button @click="fillData()">Randomize</button>
   </div>
 </template>
 <script>
-import LineChart from "./chart/LineChart.js";
+import LineChart from "../components/chart/LineChart.js";
+import Infobox from "../components/Infobox.vue";
 
 export default {
   name: "Dashboard",
   components: {
-    LineChart
+    LineChart,
+    Infobox,
   },
   data() {
     return {
-      datacollection: null
+      datacollection: null,
     };
   },
   mounted() {
     this.fillData();
     this.axios
       .get("https://api.covid19api.com/")
-      .then(response => (console.log(response)));
+      .then((response) => console.log(response));
   },
   methods: {
     fillData() {
@@ -32,19 +35,19 @@ export default {
           {
             label: "Data One",
             backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()]
+            data: [this.getRandomInt(), this.getRandomInt()],
           },
           {
             label: "Data One",
             backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          }
-        ]
+            data: [this.getRandomInt(), this.getRandomInt()],
+          },
+        ],
       };
     },
     getRandomInt() {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
-    }
-  }
+    },
+  },
 };
 </script>

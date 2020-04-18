@@ -4,8 +4,8 @@ import VueRouter from "vue-router";
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-import AboutVue from "./components/About.vue";
-import DashboardVue from "./components/Dashboard.vue";
+import AboutVue from "./pages/About.vue";
+import DashboardVue from "./pages/Dashboard.vue";
 
 Vue.config.productionTip = false
 
