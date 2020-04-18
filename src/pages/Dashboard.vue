@@ -10,68 +10,84 @@
       <infobox title="Łącznie zmarło" v-bind:text="formatNumber(summary.TotalDeaths)" />
       <infobox title="Dzisiaj wyzdrowiało" v-bind:text="formatNumber(summary.NewRecovered)" />
       <infobox title="Łącznie wyzdrowiało" v-bind:text="formatNumber(summary.TotalRecovered)" />
+      <bar-chart :chart-data="summary.confirmedChart"></bar-chart>
+      <bar-chart :chart-data="summary.deathsChart"></bar-chart>
+      <bar-chart :chart-data="summary.recoveredChart"></bar-chart>
     </div>
-
-    <!-- <line-chart :chart-data="datacollection"></line-chart> -->
-    <!-- <button @click="fillData()">Randomize</button> -->
   </div>
 </template>
+
 <script>
-import LineChart from "../components/chart/LineChart.js";
+import BarChart from "../components/chart/BarChart.js";
 import Infobox from "../components/Infobox.vue";
+
+var CHART_COLOR_1 = "#F5B7B1";
+var CHART_COLOR_2 = "#85C1E9";
 
 export default {
   name: "Dashboard",
   components: {
-    LineChart,
+    BarChart,
     Infobox
   },
   data() {
     return {
       date: null,
       summary: null
-      // datacollection: null,
     };
   },
   mounted() {
-    // this.fillData();
     this.axios.get("https://api.covid19api.com/summary").then(r => {
       this.date = new Date(r.data.Date);
       this.summary = r.data.Global;
-      console.log(this.date, this.summary);
+      this.summary.confirmedChart = this.prepareData("Przypadki", [
+        {
+          label: "Nowe",
+          data: [this.summary.NewConfirmed],
+          backgroundColor: CHART_COLOR_1
+        },
+        {
+          label: "Wszystkie",
+          data: [this.summary.TotalConfirmed],
+          backgroundColor: CHART_COLOR_2
+        }
+      ]);
+      this.summary.deathsChart = this.prepareData("Zgony", [
+        {
+          label: "Nowe",
+          data: [this.summary.NewDeaths],
+          backgroundColor: CHART_COLOR_1
+        },
+        {
+          label: "Wszystkie",
+          data: [this.summary.TotalDeaths],
+          backgroundColor: CHART_COLOR_2
+        }
+      ]);
+      this.summary.recoveredChart = this.prepareData("Wyzdrowienia", [
+        {
+          label: "Nowe",
+          data: [this.summary.NewRecovered],
+          backgroundColor: CHART_COLOR_1
+        },
+        {
+          label: "Wszystkie",
+          data: [this.summary.TotalRecovered],
+          backgroundColor: CHART_COLOR_2
+        }
+      ]);
     });
   },
   methods: {
     formatNumber(num) {
-      return num;
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    },
+    prepareData(title, datasets) {
+      return {
+        labels: [title],
+        datasets: datasets
+      };
     }
-    // fillData() {
-    //   this.datacollection = {
-    //     labels: [this.getRandomInt(), this.getRandomInt()],
-    //     datasets: [
-    //       {
-    //         label: "Data One",
-    //         backgroundColor: "#f87979",
-    //         data: [this.getRandomInt(), this.getRandomInt()],
-    //       },
-    //       {
-    //         label: "Data One",
-    //         backgroundColor: "#f87979",
-    //         data: [this.getRandomInt(), this.getRandomInt()],
-    //       },
-    //     ],
-    //   };
-    // },
-    // getRandomInt() {
-    //   return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
-    // },
   }
 };
 </script>
-
-
-<style scoped>
-.infobox {
-  margin: 1em;
-}
-</style>
