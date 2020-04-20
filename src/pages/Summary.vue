@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header title="Podsumowanie" />
     <div class="mb-4">
       <small>Dane aktualne na {{date}}</small>
     </div>
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import Header from "../components/Header.vue";
 import BarChart from "../components/chart/BarChart.js";
 import Infobox from "../components/Infobox.vue";
 
@@ -25,8 +27,9 @@ var CHART_COLOR_1 = "#F5B7B1";
 var CHART_COLOR_2 = "#85C1E9";
 
 export default {
-  name: "Dashboard",
+  name: "Summary",
   components: {
+    Header,
     BarChart,
     Infobox
   },

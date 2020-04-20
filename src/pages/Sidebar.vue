@@ -3,9 +3,9 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <router-link to="/dashboard" class="nav-link" active-class="active">
+          <router-link to="/summary" class="nav-link" active-class="active">
             <span data-feather="home"></span>
-            Dashboard
+            Summary
           </router-link>
         </li>
         <li class="nav-item">

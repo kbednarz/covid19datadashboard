@@ -5,15 +5,15 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 
 import AboutVue from "./pages/About.vue";
-import DashboardVue from "./pages/Dashboard.vue";
+import Summary from "./pages/Summary.vue";
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
 
 const routes = [{
-    path: "/dashboard",
-    component: DashboardVue
+    path: "/summary",
+    component: Summary
   },
   {
     path: "/about",
