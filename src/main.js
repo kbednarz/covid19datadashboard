@@ -6,6 +6,7 @@ import VueAxios from 'vue-axios';
 
 import AboutVue from "./pages/About.vue";
 import Summary from "./pages/Summary.vue";
+import Countries from "./pages/Countries.vue";
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,10 @@ Vue.use(VueAxios, axios)
 const routes = [{
     path: "/summary",
     component: Summary
+  },
+  {
+    path: "/countries",
+    component: Countries
   },
   {
     path: "/about",

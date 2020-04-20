@@ -5,7 +5,13 @@
         <li class="nav-item">
           <router-link to="/summary" class="nav-link" active-class="active">
             <span data-feather="home"></span>
-            Summary
+            Podsumowanie
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/countries" class="nav-link" active-class="active">
+            <span data-feather="home"></span>
+            Na świecie
           </router-link>
         </li>
         <li class="nav-item">
