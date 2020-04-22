@@ -11,6 +11,8 @@
       :fields="fields"
       :per-page="10"
       :current-page="currentPage"
+      :sort-by="'TotalConfirmed'"
+      :sort-desc="'sortDesc'"
     ></b-table>
     <b-pagination
       v-model="currentPage"
