@@ -12,11 +12,6 @@
 </template>
 
 <script>
-import "jquery/dist/jquery.slim.js";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-/* components */
 import Sidebar from "./pages/Sidebar.vue";
 
 export default {
