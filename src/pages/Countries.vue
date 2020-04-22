@@ -12,7 +12,7 @@
       :per-page="10"
       :current-page="currentPage"
       :sort-by="'TotalConfirmed'"
-      :sort-desc="'sortDesc'"
+      :sort-desc="true"
     ></b-table>
     <b-pagination
       v-model="currentPage"

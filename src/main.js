@@ -23,6 +23,10 @@ Vue.use(IconsPlugin);
 Vue.use(VueAxios, axios);
 
 const routes = [{
+    path: '/',
+    redirect: '/summary'
+  },
+  {
     path: "/summary",
     component: Summary
   },
