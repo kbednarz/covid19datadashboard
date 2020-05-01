@@ -1,12 +1,21 @@
 <template>
   <div>
     <Header title="Sytuacja w kraju" />
-    <div>
+    <div class="col-md-6">
       <b-form-select v-model="selected" :options="availableCountries"></b-form-select>
     </div>
-    <line-chart :chart-data="chartData" :options="chartOptions" v-if="chartData"></line-chart>
+    <div class="chart-container">
+      <line-chart :chart-data="chartData" :options="chartOptions" v-if="chartData"></line-chart>
+    </div>
   </div>
 </template>
+
+<style>
+.chart-container {
+  max-height: 600px;
+  margin-top: 2rem;
+}
+</style>
 
 <script>
 import Header from "../components/Header.vue";
@@ -35,7 +44,8 @@ export default {
               }
             }
           ]
-        }
+        },
+        maintainAspectRatio: false
       }
     };
   },

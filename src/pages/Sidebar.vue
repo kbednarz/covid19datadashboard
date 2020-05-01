@@ -1,5 +1,5 @@
 <template>
-  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <nav class="d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -10,20 +10,20 @@
         </li>
         <li class="nav-item">
           <router-link to="/countries" class="nav-link" active-class="active">
-            <span data-feather="home"></span>
+            <span data-feather="globe"></span>
             Na świecie
           </router-link>
         </li>
         <li class="nav-item">
           <router-link to="/country" class="nav-link" active-class="active">
-            <span data-feather="home"></span>
+            <span data-feather="flag"></span>
             W kraju
           </router-link>
         </li>
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">
-            <span data-feather="file"></span>
-            About
+            <span data-feather="bookmark"></span>
+            O aplikacji
           </router-link>
         </li>
       </ul>
@@ -77,6 +77,7 @@ export default {
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
+  display: flex;
 }
 
 .sidebar .nav-link .feather {
