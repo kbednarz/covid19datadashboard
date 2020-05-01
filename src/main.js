@@ -15,6 +15,7 @@ import {
 import AboutVue from "./pages/About.vue";
 import Summary from "./pages/Summary.vue";
 import Countries from "./pages/Countries.vue";
+import SingleCountry from "./pages/SingleCountry.vue";
 
 Vue.config.productionTip = false
 
@@ -33,6 +34,10 @@ const routes = [{
   {
     path: "/countries",
     component: Countries
+  },
+  {
+    path: "/country",
+    component: SingleCountry
   },
   {
     path: "/about",

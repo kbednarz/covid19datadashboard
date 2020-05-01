@@ -27,7 +27,6 @@
 import Header from "../components/Header.vue";
 
 export default {
-  name: "Summary",
   components: {
     Header
   },

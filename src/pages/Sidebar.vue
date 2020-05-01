@@ -15,6 +15,12 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/country" class="nav-link" active-class="active">
+            <span data-feather="home"></span>
+            W kraju
+          </router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">
             <span data-feather="file"></span>
             About
