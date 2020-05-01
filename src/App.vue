@@ -2,8 +2,10 @@
   <div id="app">
     <div class="container-fluid">
       <div class="row">
-        <Sidebar />
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <Sidebar class="col-12" />
+      </div>
+      <div class="row">
+        <main role="main" class="col-12 ml-sm-auto px-4">
           <router-view></router-view>
         </main>
       </div>
