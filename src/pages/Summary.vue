@@ -5,18 +5,30 @@
       <small>Dane aktualne na {{date | moment("DD-MM-YYYY")}}</small>
     </div>
     <div v-if="summary" class="row row-cols-1 row-cols-md-3">
-      <infobox title="Nowe przypadki" v-bind:text="formatNumber(summary.NewConfirmed)" />
-      <infobox title="Wszystkie przypadki" v-bind:text="formatNumber(summary.TotalConfirmed)" />
-      <infobox title="Dzisiaj zmarło" v-bind:text="formatNumber(summary.NewDeaths)" />
-      <infobox title="Łącznie zmarło" v-bind:text="formatNumber(summary.TotalDeaths)" />
-      <infobox title="Dzisiaj wyzdrowiało" v-bind:text="formatNumber(summary.NewRecovered)" />
-      <infobox title="Łącznie wyzdrowiało" v-bind:text="formatNumber(summary.TotalRecovered)" />
-      <bar-chart :chart-data="summary.confirmedChart"></bar-chart>
-      <bar-chart :chart-data="summary.deathsChart"></bar-chart>
-      <bar-chart :chart-data="summary.recoveredChart"></bar-chart>
+      <div class="col">
+        <infobox title="Nowe przypadki" v-bind:text="formatNumber(summary.NewConfirmed)" />
+        <infobox title="Wszystkie przypadki" v-bind:text="formatNumber(summary.TotalConfirmed)" />
+        <bar-chart :chart-data="summary.confirmedChart" class="chart"></bar-chart>
+      </div>
+      <div class="col">
+        <infobox title="Dzisiaj zmarło" v-bind:text="formatNumber(summary.NewDeaths)" />
+        <infobox title="Łącznie zmarło" v-bind:text="formatNumber(summary.TotalDeaths)" />
+        <bar-chart :chart-data="summary.deathsChart" class="chart"></bar-chart>
+      </div>
+      <div class="col">
+        <infobox title="Dzisiaj wyzdrowiało" v-bind:text="formatNumber(summary.NewRecovered)" />
+        <infobox title="Łącznie wyzdrowiało" v-bind:text="formatNumber(summary.TotalRecovered)" />
+        <bar-chart :chart-data="summary.recoveredChart" class="chart"></bar-chart>
+      </div>
     </div>
   </div>
 </template>
+
+<style>
+.chart {
+  padding: 0 15px;
+}
+</style>
 
 <script>
 import Header from "../components/Header.vue";
