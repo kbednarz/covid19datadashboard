@@ -2,7 +2,7 @@
   <div>
     <Header title="Podsumowanie" />
     <div class="mb-4">
-      <small>Dane aktualne na {{date}}</small>
+      <small>Dane aktualne na {{date | moment("DD-MM-YYYY")}}</small>
     </div>
     <div v-if="summary" class="row row-cols-1 row-cols-md-3">
       <infobox title="Nowe przypadki" v-bind:text="formatNumber(summary.NewConfirmed)" />

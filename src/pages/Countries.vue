@@ -2,7 +2,7 @@
   <div>
     <Header title="Sytuacja na świecie" />
     <div class="mb-4">
-      <small>Dane aktualne na {{date}}</small>
+      <small>Dane aktualne na {{date | moment("DD-MM-YYYY")}}</small>
     </div>
     <b-table
       striped

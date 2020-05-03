@@ -12,6 +12,7 @@ import {
   BootstrapVue,
   IconsPlugin
 } from 'bootstrap-vue';
+import VueMoment from 'vue-moment';
 import AboutVue from "./pages/About.vue";
 import Summary from "./pages/Summary.vue";
 import Countries from "./pages/Countries.vue";
@@ -22,7 +23,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueAxios, axios);
-
+Vue.use(VueMoment);
 const routes = [{
     path: '/',
     redirect: '/summary'
