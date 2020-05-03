@@ -1,9 +1,9 @@
 <template>
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-sm-6 col-lg-4 mb-5">
         <ul class="list-group">
             <li class="list-group-item active"><a> {{ listHeader }}</a></li>
             <li class="list-group-item d-flex justify-content-between align-items-center" v-for="item in items"  :key="item.name">
-                {{ item.name }}<span class="badge badge-primary badge-pill">{{ item.value }}</span>
+                {{ item.Country }}<span class="badge badge-primary badge-pill">{{ item[property] }}</span>
             </li>
         </ul>
     </div>
@@ -18,18 +18,18 @@
             size: Number,
             listHeader: String
         },
-        data: function() {
-            let sorted = this.listItems.sort((a, b) => b[this.property] - a[this.property] ).slice(0, this.size);
-            let self = this;
-            let mapped = sorted.map((a) => {
-                return {
-                    name: a.Country,
-                    value: a[self.property]
-                }
-            });
+        data: () => {
             return {
-                items: mapped,
+                items: null,
             }
         },
+        methods: {
+          prepareList: function() {
+              return this.listItems.sort((a, b) => b[this.property] - a[this.property] ).slice(0, this.size);
+          }
+        },
+        mounted() {
+            this.items = this.prepareList();
+        }
     };
 </script>

@@ -17,6 +17,7 @@ import AboutVue from "./pages/About.vue";
 import Summary from "./pages/Summary.vue";
 import Countries from "./pages/Countries.vue";
 import SingleCountry from "./pages/SingleCountry.vue";
+import Top10 from "./pages/Top10";
 
 Vue.config.productionTip = false
 
@@ -43,6 +44,10 @@ const routes = [{
   {
     path: "/about",
     component: AboutVue
+  },
+  {
+    path: "/top10",
+    component: Top10
   }
 ];
 const router = new VueRouter({

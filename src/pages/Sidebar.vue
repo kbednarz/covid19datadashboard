@@ -34,6 +34,12 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/top10" class="nav-link" active-class="active">
+            <span data-feather="list"></span>
+            Top 10
+          </router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">
             <span data-feather="bookmark"></span>
             O aplikacji
