@@ -13,6 +13,11 @@ Celem aplikacji jest:
 - Agregacja danych w postaci sortowalnych tabel
 - Ranking statystyk dla poszczególnych krajów
 
+## Autorzy
+- Kamil Bednarz
+- Paweł Czarny
+- Marcelina Iwanów
+   
 ## Screenshots
 
 ![Alt text](/summary.png)
